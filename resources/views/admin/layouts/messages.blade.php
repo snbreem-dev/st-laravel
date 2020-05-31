@@ -1,0 +1,37 @@
+@if($errors->any())
+    <div class="alert alert-danger alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <h5><i class="icon fas fa-ban"></i> Alert!</h5>
+        @foreach($errors->all() as $error)
+        {{$error}}</br>
+        @endforeach
+    </div>
+@endif
+
+@if(Session::has('success'))
+    <div class="alert alert-success alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <h5><i class="icon fas fa-check"></i> Success</h5>
+        {{Session::get('success')}}
+    </div>
+@endif
+
+@if(Session::has('error'))
+    <div class="alert alert-danger alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <h5><i class="icon fas fa-ban"></i> Login Fails!</h5>
+        {{Session::get('error')}}
+    </div>
+@endif
+{{--@if(App::isLocale('en'))--}}
+{{--    {{App::setLocale('ar')}}--}}
+{{--@endif--}}
+{{--{{__('welcome to iug')}}--}}
+{{--<br>--}}
+{{--{{__('welcome to it')}}--}}
+{{--<br>--}}
+{{--{{__('welcome to course')}}--}}
+{{--<br>--}}
+{{--{{__('messages.college')}}--}}
+{{--<br>--}}
+{{--@lang('messages.course')--}}
